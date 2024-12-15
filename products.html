@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+        />
+        <title>현대자동차 닷컴</title>
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.transform2d.js"></script>
+        <!-- gsap -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/products.css" />
+        <!-- 폰트어썸 -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <!-- 폰트 -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+            rel="stylesheet"
+        />
+        <!--  font-family: "Bebas Neue", sans-serif; -->
+    </head>
+    <body>
+        <header>
+            <div class="logo_wrap">
+                <h1>
+                    <a href="index.html">
+                        <img
+                            src="img/hyundai_logo_wh.png"
+                            alt="현대로고 화이트"
+                        />
+                    </a>
+                </h1>
+            </div>
+            <div class="navi_wrap">
+                <ul class="manu">
+                    <li>
+                        <a href="brand_story.html">Brand Story</a>
+                        <span></span>
+                    </li>
+                    <li>
+                        <a href="products.html">Product</a>
+                        <span></span>
+                    </li>
+                    <li>
+                        <a href="service.html">Service</a>
+                        <span></span>
+                    </li>
+                    <li>
+                        <ul class="icon_wrap">
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-regular fa-user"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="ham_icon">
+                    <div class="wrap">
+                        <div class="bar up"></div>
+                        <div class="bar down"></div>
+                    </div>
+                    <div class="side_menu">
+                        <ul class="side_txt">
+                            <li><a href="index.html"> Home</a></li>
+                            <li>
+                                <a href="brand_story.html">Brand Story</a>
+                            </li>
+                            <li>
+                                <a href="products.html">Product</a>
+                            </li>
+                            <li>
+                                <a href="service.html">Service</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <div class="titl_banner p1_titl">
+                <div class="b_bg"></div>
+                <h2>Brand Story</h2>
+            </div>
+            <section class="page01">
+                <div class="sub_titl">
+                    <h2>The new IONIQ 5</h2>
+                    <p>내가 선택한 단 하나의 전기차</p>
+                </div>
+                <ul class="p1_bg">
+                    <li><img src="img/product_page01.jpg" alt="IONIQ5" /></li>
+                    <li></li>
+                </ul>
+            </section>
+            <section class="page02">
+                <div class="p2_bg"></div>
+                <h2>유니크한 외장과 혁신적인 실내공간</h2>
+                <ul class="p2_photo">
+                    <li><img src="img/product_p2_01.jpg" alt="IONIQ5" /></li>
+                    <li>
+                        <img src="img/product_p2_02.jpg" alt="IONIQ5 충전중" />
+                    </li>
+                    <li>
+                        <img src="img/product_p2_03.jpg" alt="IONIQ5 트렁크" />
+                    </li>
+                    <li>
+                        <img
+                            src="img/product_p2_04.jpg"
+                            alt="IONIQ5 운전자 내부"
+                        />
+                    </li>
+                    <li>
+                        <img
+                            src="img/product_p2_05.jpg"
+                            alt="IONIQ5 내부 좌석"
+                        />
+                    </li>
+                    <li>
+                        <img
+                            src="img/product_p2_06.jpg"
+                            alt="IONIQ5 무선 소프트웨어 업데이트"
+                        />
+                    </li>
+                </ul>
+            </section>
+            <section class="page03">
+                <div class="sub_titl">
+                    <h2>AVANTE N</h2>
+                    <p>역동적인 디테일과 강렬한 컬러</p>
+                </div>
+                <ul class="p1_bg">
+                    <li><img src="img/product_page03.jpg" alt="IONIQ 5" /></li>
+                    <li></li>
+                </ul>
+            </section>
+            <section class="page04">
+                <h2>다이나믹한 드라이빙 퍼포먼스</h2>
+                <ul class="p4_photo">
+                    <li>
+                        <img
+                            class="pic1"
+                            src="img/product_p4_01.jpg"
+                            alt="AVANTE N"
+                        />
+                        <img
+                            class="pic2"
+                            src="img/product_p4_02.jpg"
+                            alt="서킷 정보 및 주행 정보와 연동 App"
+                        />
+                    </li>
+                    <li><img src="img/product_p4_03.jpg" alt="AVANTE N" /></li>
+                    <li><img src="img/product_p4_04.jpg" alt="AVANTE N" /></li>
+                </ul>
+            </section>
+        </div>
+        <footer>
+            <h1>
+                <a href="index.html">
+                    <img src="img/hyundai_logo_wh.png" alt="현대로고 화이트" />
+                </a>
+            </h1>
+            <ul class="sns">
+                <li>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </li>
+            </ul>
+            <ul class="Copyright">
+                <li>
+                    고객센터 : 080-600-6000
+                    <span>개인정보 처리방침</span>
+                    <span>|</span>
+                    <span>이용약관</span>
+                </li>
+                <li>COPYRIGHT ⓒ HYUNDAI MOTOR COMPANY. ALL RIGHTS RESERVED.</li>
+            </ul>
+            <div class="top_Butt">
+                <img src="img/top_button.svg" alt="" />
+            </div>
+        </footer>
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+        </script>
+        <script src="js/products.js"></script>
+        <script src="js/products_gsap.js"></script>
+    </body>
+</html>

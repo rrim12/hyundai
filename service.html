@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+        />
+        <title>현대자동차 닷컴</title>
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.transform2d.js"></script>
+        <!-- gsap -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/service.css" />
+        <!-- 폰트어썸 -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <!-- 폰트 -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+            rel="stylesheet"
+        />
+        <!--  font-family: "Bebas Neue", sans-serif; -->
+    </head>
+    <body>
+        <header>
+            <div class="logo_wrap">
+                <h1>
+                    <a href="index.html">
+                        <img
+                            src="img/hyundai_logo_wh.png"
+                            alt="현대로고 화이트"
+                        />
+                    </a>
+                </h1>
+            </div>
+            <div class="navi_wrap">
+                <ul class="manu">
+                    <li>
+                        <a href="brand_story.html">Brand Story</a>
+                        <span></span>
+                    </li>
+                    <li>
+                        <a href="products.html">Product</a>
+                        <span></span>
+                    </li>
+                    <li>
+                        <a href="service.html">Service</a>
+                        <span></span>
+                    </li>
+                    <li>
+                        <ul class="icon_wrap">
+                            <li>
+                                <a href="#">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa-regular fa-user"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="ham_icon">
+                    <div class="wrap">
+                        <div class="bar up"></div>
+                        <div class="bar down"></div>
+                    </div>
+                    <div class="side_menu">
+                        <ul class="side_txt">
+                            <li><a href="index.html"> Home</a></li>
+                            <li>
+                                <a href="brand_story.html">Brand Story</a>
+                            </li>
+                            <li>
+                                <a href="products.html">Product</a>
+                            </li>
+                            <li>
+                                <a href="service.html">Service</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="container">
+            <div class="titl_banner p1_titl">
+                <div class="b_bg"></div>
+                <h2>Service</h2>
+            </div>
+            <section class="page01">
+                <div class="pg_titl">
+                    <h2>blue members</h2>
+                    <p>현대자동차 오너를 위한 고객 서비스</p>
+                </div>
+                <ul class="p1_txt">
+                    <li><img src="img/blue_members.jpg" alt="맴버쉽카드" /></li>
+                    <li>
+                        <div class="txt_box">
+                            <p>블루멤버스 전용 이벤트 제공</p>
+                            <p>블루멤버스만의 다양한 혜택</p>
+                            <p>기타 특화 서비스 제공</p>
+                            <a class="more" href="brand_story.html">
+                                <div class="more_txt">가입하기</div>
+                                <div class="fullColor"></div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="page02">
+                <div class="sub_titl">
+                    <h2>올 케어 서비스</h2>
+                    <p>현대자동차에서 제공하는 차량 관련 서비스 프로그램</p>
+                </div>
+                <ul class="care_service">
+                    <li>
+                        <div class="box_bg"></div>
+                        <a class="more" href="brand_story.html">
+                            <div class="more_txt">신청하기</div>
+                            <div class="fullColor"></div>
+                        </a>
+                        <div class="txt_wrap">
+                            <h3>딜리버리</h3>
+                            <p>차량이동 서비스(로드탁송)</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="box_bg"></div>
+                        <a class="more" href="brand_story.html">
+                            <div class="more_txt">신청하기</div>
+                            <div class="fullColor"></div>
+                        </a>
+                        <div class="txt_wrap">
+                            <h3>대리</h3>
+                            <p>
+                                간단한 터치로 즉시 호출 및 예약이 가능한 대리
+                                운전 서비스
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="box_bg"></div>
+                        <a class="more" href="brand_story.html">
+                            <div class="more_txt">신청하기</div>
+                            <div class="fullColor"></div>
+                        </a>
+                        <div class="txt_wrap">
+                            <h3>방문세차</h3>
+                            <p>
+                                원하는 날짜/장소에서 받는 프리미엄 세차 서비스
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="box_bg"></div>
+                        <a class="more" href="brand_story.html">
+                            <div class="more_txt">신청하기</div>
+                            <div class="fullColor"></div>
+                        </a>
+                        <div class="txt_wrap">
+                            <h3>픽업앤충전</h3>
+                            <p>
+                                시간과 장소에 구애 받지 않는 신개념 전기차 충전
+                                서비스
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="page03">
+                <div class="sub_titl">
+                    <h2>긴급출동서비스</h2>
+                </div>
+                <div class="p3_bg">
+                    <div class="dark_bg"></div>
+                    <ul class="p3_txt">
+                        <li>긴급출동 지원센터</li>
+                        <li>(080-600-6000)</li>
+                        <li>
+                            <a class="more" href="brand_story.html">
+                                <div class="more_txt">신청하기</div>
+                                <div class="fullColor"></div>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="process">
+                        <li>
+                            <img src="img/process-step-a-pc.png" alt="" />
+                            <h3>고객</h3>
+                            <p>긴급출동요청</p>
+                        </li>
+                        <li class="arrow">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <img src="img/process-step-b-pc.png" alt="" />
+                            <h3>상황실</h3>
+                            <p>접수 및 출동 지령</p>
+                        </li>
+                        <li class="arrow">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <img src="img/process-step-c-pc.png" alt="" />
+                            <h3>긴급출동요원</h3>
+                            <p>출동접수</p>
+                        </li>
+                        <li class="arrow">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <img src="img/process-step-d-pc.png" alt="" />
+                            <h3>고객안심전화</h3>
+                            <p>
+                                고객위치 확인 및<br />
+                                도착예정시간 안내
+                            </p>
+                        </li>
+                        <li class="arrow">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <img src="img/process-step-e-pc.png" alt="" />
+                            <h3>현장 출동</h3>
+                            <p>신속하게 현장으로 이동</p>
+                        </li>
+                        <li class="arrow">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <img src="img/process-step-f-pc.png" alt="" />
+                            <h3>현장 도착</h3>
+                            <p>고장 조치</p>
+                        </li>
+                        <li class="arrow">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </li>
+                        <li>
+                            <img src="img/process-step-g-pc.png" alt="" />
+                            <h3>상황실</h3>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="page04">
+                <div class="sub_titl">
+                    <h2>고객 차량 지원 서비스</h2>
+                </div>
+                <div class="p4_wrap">
+                    <div class="p4_bg"></div>
+                    <ul class="p4_txt">
+                        <li>
+                            <p>보증수리 입고 고객의 편의를 위해 수리 기간</p>
+                            <p>동안 차량을 제공해드리는 서비스입니다</p>
+                        </li>
+                        <li>
+                            <a class="more" href="brand_story.html">
+                                <div class="more_txt">신청하기</div>
+                                <div class="fullColor"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <h1>
+                <a href="index.html">
+                    <img src="img/hyundai_logo_wh.png" alt="현대로고 화이트" />
+                </a>
+            </h1>
+            <ul class="sns">
+                <li>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </li>
+            </ul>
+            <ul class="Copyright">
+                <li>
+                    고객센터 : 080-600-6000
+                    <span>개인정보 처리방침</span>
+                    <span>|</span>
+                    <span>이용약관</span>
+                </li>
+                <li>COPYRIGHT ⓒ HYUNDAI MOTOR COMPANY. ALL RIGHTS RESERVED.</li>
+            </ul>
+            <div class="top_Butt">
+                <img src="img/top_button.svg" alt="" />
+            </div>
+        </footer>
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+        </script>
+        <script src="js/service.js"></script>
+        <script src="js/service_gsap.js"></script>
+    </body>
+</html>
