@@ -9,6 +9,7 @@
         <script src="js/jquery-3.7.1.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
         <script src="js/jquery.transform2d.js"></script>
+        <script src="js/splitting.min.js"></script>
         <!-- gsap -->
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -28,6 +29,7 @@
             rel="stylesheet"
         />
         <!--  font-family: "Bebas Neue", sans-serif; -->
+        <link rel="icon" href="/img/favicon.ico" />
     </head>
     <body>
         <header>
@@ -42,18 +44,18 @@
                 </h1>
             </div>
             <div class="navi_wrap">
-                <ul class="manu">
+                <ul class="menu">
                     <li>
                         <a href="brand_story.html">Brand Story</a>
-                        <span></span>
+                        <div class="circle"></div>
                     </li>
                     <li>
                         <a href="products.html">Product</a>
-                        <span></span>
+                        <div class="circle"></div>
                     </li>
                     <li>
                         <a href="service.html">Service</a>
-                        <span></span>
+                        <div class="circle"></div>
                     </li>
                     <li>
                         <ul class="icon_wrap">
@@ -61,11 +63,13 @@
                                 <a href="#">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </a>
+                                <div class="circle2"></div>
                             </li>
                             <li>
                                 <a href="#">
                                     <i class="fa-regular fa-user"></i>
                                 </a>
+                                <div class="circle2"></div>
                             </li>
                         </ul>
                     </li>
@@ -77,15 +81,23 @@
                     </div>
                     <div class="side_menu">
                         <ul class="side_txt">
-                            <li><a href="index.html"> Home</a></li>
                             <li>
-                                <a href="brand_story.html">Brand Story</a>
+                                <a data-splitting href="index.html">Home</a>
                             </li>
                             <li>
-                                <a href="products.html">Product</a>
+                                <a href="brand_story.html" data-splitting
+                                    >Brand Story</a
+                                >
                             </li>
                             <li>
-                                <a href="service.html">Service</a>
+                                <a href="products.html" data-splitting
+                                    >Product</a
+                                >
+                            </li>
+                            <li>
+                                <a href="service.html" data-splitting
+                                    >Service</a
+                                >
                             </li>
                         </ul>
                     </div>
@@ -93,50 +105,34 @@
             </div>
         </header>
         <div id="visual">
-            <ul class="slide">
-                <li class="f_on">
-                    <img src="img/visual01.jpg" alt="sonata 승용차" />
-                    <img class="v_light" src="img/visual_light.jpg" alt="" />
-                    <div class="b_bg"></div>
-                    <div class="s_txt">
-                        <h2>sonata the edge</h2>
-                        <p>익숙함도 완전히 새롭게</p>
-                    </div>
-                </li>
-                <li>
-                    <img src="" alt="IONIQ 5 승용차" />
-                    <div class="b_bg"></div>
-                    <div class="s_txt">
-                        <h2>The new IONIQ 5</h2>
-                        <p>내가 선택한 단 하나의 전기차</p>
-                    </div>
-                </li>
-                <li>
-                    <img src="" alt="AVANTE N 승용차" />
-                    <div class="b_bg"></div>
-                    <div class="s_txt">
-                        <h2>AVANTE N</h2>
-                        <p>역동적인 디테일과 강렬한 컬러</p>
-                    </div>
-                </li>
-            </ul>
+            <div class="v_wrap">
+                <img
+                    class="sonata"
+                    src="img/visual01.jpg"
+                    alt="sonata 승용차"
+                />
+                <img class="v_light light" src="img/visual_light.jpg" alt="" />
+                <div class="b_bg"></div>
+                <div class="s_txt">
+                    <h2>sonata the edge</h2>
+                    <p>익숙함도 완전히 새롭게</p>
+                </div>
+            </div>
         </div>
         <div id="container">
             <section class="brandStory">
-                <h2 class="titl">Brand Story</h2>
+                <h2 class="titl bs">Brand Story</h2>
                 <ul class="story box1">
                     <li>
-                        <ul class="b_txt l_box">
-                            <li>현대자동차가 지금까지</li>
-                            <li>걸어온 길의 중심에는</li>
-                            <li>인류애가 늘 함께 해왔습니다</li>
-                            <li>
-                                <a class="more" href="brand_story.html">
-                                    <div class="more_txt">더 보기</div>
-                                    <div class="fullColor"></div
-                                ></a>
-                            </li>
-                        </ul>
+                        <div class="b_txt l_box">
+                            <p class="txt1">현대자동차가 지금까지</p>
+                            <p class="txt2">걸어온 길의 중심에는</p>
+                            <p class="txt3">인류애가 늘 함께 해왔습니다</p>
+                            <a class="more" href="brand_story.html">
+                                <div class="more_txt">더 보기</div>
+                                <div class="fullColor"></div
+                            ></a>
+                        </div>
                     </li>
                     <li>
                         <img src="img/brand_index01.jpg" alt="차박하는 풍경" />
@@ -150,22 +146,20 @@
                         />
                     </li>
                     <li>
-                        <ul class="b_txt r_box">
-                            <li>우리는 인류가 더 나은</li>
-                            <li>방향으로 나아가도록</li>
-                            <li>기여하기 위해 존재합니다</li>
-                            <li>
-                                <a class="more" href="brand_story.html">
-                                    <div class="more_txt">더 보기</div>
-                                    <div class="fullColor"></div>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="b_txt r_box">
+                            <p class="txt1">우리는 인류가 더 나은</p>
+                            <p class="txt2">방향으로 나아가도록</p>
+                            <p class="txt3">기여하기 위해 존재합니다</p>
+                            <a class="more" href="brand_story.html">
+                                <div class="more_txt">더 보기</div>
+                                <div class="fullColor"></div>
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </section>
             <section class="product1">
-                <h2 class="titl">Product</h2>
+                <h2 class="titl pd">Product</h2>
                 <ul class="p1_bg">
                     <li>
                         <img
@@ -173,7 +167,7 @@
                             alt="제네시스 검은색 승용차"
                         />
                         <img
-                            class="light"
+                            class="cl_light"
                             src="img/product1_left_light.jpg"
                             alt="헤드라이트"
                         />
@@ -184,92 +178,88 @@
                             alt="제네시스 검은색 승용차 헤드라이트 부분"
                         />
                         <img
-                            class="light"
+                            class="cr_light"
                             src="img/product1_right_light.jpg"
                             alt="헤드라이트"
                         />
-                        <ul class="p1_txt">
-                            <li>고성능 퍼포먼스에</li>
-                            <li>업그레이드된 상품성</li>
-                            <li>
-                                <a class="more" href="products.html">
-                                    <div class="more_txt">더 보기</div>
-                                    <div class="fullColor"></div>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="p1_txt">
+                            <p class="up1">고성능 퍼포먼스에</p>
+                            <p class="up2">업그레이드된 상품성</p>
+                            <a class="more" href="products.html">
+                                <div class="more_txt">더 보기</div>
+                                <div class="fullColor"></div>
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </section>
             <section class="product2">
                 <div class="p2_bg">
-                    <img src="img/product2.jpg" alt="아반테 승용차" />
+                    <img
+                        class="back_bg"
+                        src="img/product2.jpg"
+                        alt="아반테 승용차"
+                    />
                     <img
                         class="car"
                         src="img/product2_car.png"
                         alt="아반테 승용차"
                     />
                 </div>
-                <ul class="p2_txt">
-                    <li>더 낮아지고 와이드해진 디자인</li>
-                    <li>
-                        <a class="more" href="products.html">
-                            <div class="more_txt">더 보기</div>
-                            <div class="fullColor"></div>
-                        </a>
-                    </li>
-                </ul>
+                <div class="p2_txt">
+                    <p>더 낮아지고 와이드해진 디자인</p>
+                    <a class="more" href="products.html">
+                        <div class="more_txt">더 보기</div>
+                        <div class="fullColor"></div>
+                    </a>
+                </div>
             </section>
             <section class="movie">
                 <video src="img/promomovie.mov" loop autoplay muted></video>
-                <ul class="m_txt">
-                    <li>공간, 그 이상의 공감</li>
-                    <li>
-                        <a class="more" href="products.html">
-                            <div class="more_txt">더 보기</div>
-                            <div class="fullColor"></div>
-                        </a>
-                    </li>
-                </ul>
+                <div class="m_bg"></div>
+                <div class="m_txt">
+                    <p>
+                        <span class="m_txt1">공간, </span
+                        ><span class="m_txt2">그 이상의 공감</span>
+                    </p>
+                    <a class="more" href="products.html">
+                        <div class="more_txt">더 보기</div>
+                        <div class="fullColor"></div>
+                    </a>
+                </div>
             </section>
             <section class="service">
-                <h2 class="titl">Service</h2>
+                <h2 class="titl sv">Service</h2>
                 <ul class="s_box">
                     <li>
                         <div class="s_bg"></div>
-                        <ul class="sbox_txt">
-                            <li>올 케어 서비스</li>
-                            <li>
-                                <a class="more" href="service.html">
-                                    <div class="more_txt">더 보기</div>
-                                    <div class="fullColor"></div>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="sbox_txt sb_txt1">
+                            <p>올 케어 서비스</p>
+                            <a class="more" href="service.html">
+                                <div class="more_txt">더 보기</div>
+                                <div class="fullColor"></div>
+                            </a>
+                        </div>
                     </li>
                     <li>
                         <div class="s_bg"></div>
-                        <ul class="sbox_txt">
-                            <li>블루멤버스</li>
-                            <li>
-                                <a class="more" href="service.html">
-                                    <div class="more_txt">더 보기</div>
-                                    <div class="fullColor"></div>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="sbox_txt sb_txt2">
+                            <p>블루멤버스</p>
+                            <a class="more" href="service.html">
+                                <div class="more_txt">더 보기</div>
+                                <div class="fullColor"></div>
+                            </a>
+                        </div>
                     </li>
                     <li>
                         <div class="s_bg"></div>
-                        <ul class="sbox_txt">
-                            <li>긴급출동서비스</li>
-                            <li>
-                                <a class="more" href="service.html">
-                                    <div class="more_txt">더 보기</div>
-                                    <div class="fullColor"></div>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="sbox_txt sb_txt3">
+                            <p>긴급출동서비스</p>
+                            <a class="more" href="service.html">
+                                <div class="more_txt">더 보기</div>
+                                <div class="fullColor"></div>
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </section>
@@ -301,7 +291,7 @@
                 <li>COPYRIGHT ⓒ HYUNDAI MOTOR COMPANY. ALL RIGHTS RESERVED.</li>
             </ul>
             <div class="top_Butt">
-                <img src="img/top_button.svg" alt="" />
+                <img src="img/topbutt.jpg" alt="탑 스크롤 버튼" />
             </div>
         </footer>
         <script>

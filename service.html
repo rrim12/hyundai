@@ -9,6 +9,7 @@
         <script src="js/jquery-3.7.1.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
         <script src="js/jquery.transform2d.js"></script>
+        <script src="js/splitting.min.js"></script>
         <!-- gsap -->
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -28,6 +29,7 @@
             rel="stylesheet"
         />
         <!--  font-family: "Bebas Neue", sans-serif; -->
+        <link rel="icon" href="/img/favicon.ico" />
     </head>
     <body>
         <header>
@@ -42,18 +44,18 @@
                 </h1>
             </div>
             <div class="navi_wrap">
-                <ul class="manu">
+                <ul class="menu">
                     <li>
                         <a href="brand_story.html">Brand Story</a>
-                        <span></span>
+                        <div class="circle"></div>
                     </li>
                     <li>
                         <a href="products.html">Product</a>
-                        <span></span>
+                        <div class="circle"></div>
                     </li>
                     <li>
                         <a href="service.html">Service</a>
-                        <span></span>
+                        <div class="circle"></div>
                     </li>
                     <li>
                         <ul class="icon_wrap">
@@ -61,11 +63,13 @@
                                 <a href="#">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </a>
+                                <div class="circle2"></div>
                             </li>
                             <li>
                                 <a href="#">
                                     <i class="fa-regular fa-user"></i>
                                 </a>
+                                <div class="circle2"></div>
                             </li>
                         </ul>
                     </li>
@@ -77,15 +81,23 @@
                     </div>
                     <div class="side_menu">
                         <ul class="side_txt">
-                            <li><a href="index.html"> Home</a></li>
                             <li>
-                                <a href="brand_story.html">Brand Story</a>
+                                <a href="index.html" data-splitting> Home</a>
                             </li>
                             <li>
-                                <a href="products.html">Product</a>
+                                <a href="brand_story.html" data-splitting
+                                    >Brand Story</a
+                                >
                             </li>
                             <li>
-                                <a href="service.html">Service</a>
+                                <a href="products.html" data-splitting
+                                    >Product</a
+                                >
+                            </li>
+                            <li>
+                                <a href="service.html" data-splitting
+                                    >Service</a
+                                >
                             </li>
                         </ul>
                     </div>

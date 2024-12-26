@@ -27,16 +27,22 @@ body {
     header {
         width: 100vw;
         font-family: "Pretendard-Regular";
+        background-color: black;
         display: flex;
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
         padding: 10px 20px;
-        background-color: black;
         position: fixed;
         top: 0px;
         left: 0px;
         z-index: 10;
+    }
+    /* 스크롤시 헤더색 바뀜 */
+    .bg_on {
+        background-color: black;
+        transition-property: background-color;
+        transition-duration: 0.5s;
     }
     header a {
         color: #fff;
@@ -47,8 +53,7 @@ body {
     h1 img {
         width: 100%;
     }
-    .manu {
-        font-family: "Pretendard-Regular";
+    .menu {
         display: flex;
         justify-content: space-between;
         gap: 30px;
@@ -94,6 +99,38 @@ body {
         left: 10%;
         transform: translateY(-50%);
     }
+    /* 사이드메뉴 스플리팅 */
+    .side_txt a .char {
+        color: transparent;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+    .side_txt a .char::before,
+    .side_txt a .char::after {
+        content: attr(data-char);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        transition: transform 0.3s;
+        transition-delay: calc(30ms * var(--char-index));
+        color: #222;
+        opacity: 0.9;
+    }
+
+    .side_txt a .char::before {
+        /* color: red; */
+        transform: translateY(100%);
+        opacity: 1;
+    }
+    /* 마우스를 위치시키면*/
+    .side_txt a:hover .char::before {
+        transform: translateY(0px);
+    }
+    .side_txt a:hover .char::after {
+        transform: translateY(-100%);
+    }
+
     /* 햄버거바 */
     .wrap {
         width: 30px;
@@ -366,16 +403,22 @@ body {
     header {
         width: 100vw;
         font-family: "Pretendard-Regular";
+        background-color: black;
         display: flex;
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
         padding: 10px 20px;
-        background-color: black;
         position: fixed;
         top: 0px;
         left: 0px;
         z-index: 10;
+    }
+    /* 스크롤시 헤더색 바뀜 */
+    .bg_on {
+        background-color: black;
+        transition-property: background-color;
+        transition-duration: 0.5s;
     }
     header a {
         color: #fff;
@@ -389,8 +432,7 @@ body {
     .navi_wrap {
         margin-right: 80px;
     }
-    .manu {
-        font-family: "Pretendard-Regular";
+    .menu {
         display: flex;
         justify-content: space-between;
         gap: 30px;
@@ -398,6 +440,26 @@ body {
         box-sizing: border-box;
         font-size: 20px;
         font-weight: 500;
+    }
+    .menu > li {
+        position: relative;
+    }
+    .menu .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        top: -5px;
+        right: 90px;
+        color: #fff;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    /* 제이쿼리 */
+    .menu .circle_mov {
+        opacity: 1;
+        right: -15px;
     }
     .icon_wrap {
         display: flex;
@@ -407,6 +469,27 @@ body {
         box-sizing: border-box;
         font-size: 25px;
     }
+    .icon_wrap > li {
+        position: relative;
+    }
+    .icon_wrap .circle2 {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        top: -5px;
+        right: 30px;
+        color: #fff;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    /* 제이쿼리 */
+    .icon_wrap .icon_mov {
+        opacity: 1;
+        right: -10px;
+    }
+
     .ham_icon {
         width: 60px;
     }
@@ -435,6 +518,38 @@ body {
         left: 10%;
         transform: translateY(-50%);
     }
+    /* 사이드메뉴 스플리팅 */
+    .side_txt a .char {
+        color: transparent;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+    .side_txt a .char::before,
+    .side_txt a .char::after {
+        content: attr(data-char);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        transition: transform 0.3s;
+        transition-delay: calc(30ms * var(--char-index));
+        color: #222;
+        opacity: 0.9;
+    }
+
+    .side_txt a .char::before {
+        /* color: red; */
+        transform: translateY(100%);
+        opacity: 1;
+    }
+    /* 마우스를 위치시키면*/
+    .side_txt a:hover .char::before {
+        transform: translateY(0px);
+    }
+    .side_txt a:hover .char::after {
+        transform: translateY(-100%);
+    }
+
     /* 햄버거바 */
     .wrap {
         width: 30px;
@@ -705,16 +820,22 @@ body {
     header {
         width: 100vw;
         font-family: "Pretendard-Regular";
+        background-color: black;
         display: flex;
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
         padding: 10px 20px;
-        background-color: black;
         position: fixed;
         top: 0px;
         left: 0px;
         z-index: 10;
+    }
+    /* 스크롤시 헤더색 바뀜 */
+    .bg_on {
+        background-color: black;
+        transition-property: background-color;
+        transition-duration: 0.5s;
     }
     header a {
         color: #fff;
@@ -728,8 +849,7 @@ body {
     .navi_wrap {
         margin-right: 90px;
     }
-    .manu {
-        font-family: "Pretendard-Regular";
+    .menu {
         display: flex;
         justify-content: space-between;
         gap: 50px;
@@ -738,6 +858,26 @@ body {
         font-size: 20px;
         font-weight: 500;
     }
+    .menu > li {
+        position: relative;
+    }
+    .menu .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        top: -5px;
+        right: 90px;
+        color: #fff;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    /* 제이쿼리 */
+    .menu .circle_mov {
+        opacity: 1;
+        right: -15px;
+    }
     .icon_wrap {
         display: flex;
         justify-content: space-between;
@@ -745,6 +885,26 @@ body {
         align-items: center;
         box-sizing: border-box;
         font-size: 25px;
+    }
+    .icon_wrap > li {
+        position: relative;
+    }
+    .icon_wrap .circle2 {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        top: -5px;
+        right: 30px;
+        color: #fff;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    /* 제이쿼리 */
+    .icon_wrap .icon_mov {
+        opacity: 1;
+        right: -10px;
     }
     .ham_icon {
         width: 60px;
@@ -756,8 +916,6 @@ body {
         right: -500px;
         top: 0px;
         background-color: ghostwhite;
-        opacity: 0;
-        transition: 0.5s;
     }
     .side_menu a {
         color: #222;
@@ -776,6 +934,38 @@ body {
         left: 10%;
         transform: translateY(-50%);
     }
+    /* 사이드메뉴 스플리팅 */
+    .side_txt a .char {
+        color: transparent;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+    .side_txt a .char::before,
+    .side_txt a .char::after {
+        content: attr(data-char);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        transition: transform 0.3s;
+        transition-delay: calc(30ms * var(--char-index));
+        color: #222;
+        opacity: 0.9;
+    }
+
+    .side_txt a .char::before {
+        /* color: red; */
+        transform: translateY(100%);
+        opacity: 1;
+    }
+    /* 마우스를 위치시키면*/
+    .side_txt a:hover .char::before {
+        transform: translateY(0px);
+    }
+    .side_txt a:hover .char::after {
+        transform: translateY(-100%);
+    }
+
     /* 햄버거바 */
     .wrap {
         width: 30px;

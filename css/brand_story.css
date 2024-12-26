@@ -23,16 +23,22 @@ body {
     /* header */
     header {
         width: 100vw;
+        background-color: black;
         display: flex;
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
         padding: 10px 20px;
-        background-color: black;
         position: fixed;
         top: 0px;
         left: 0px;
         z-index: 10;
+    }
+    /* 스크롤시 헤더색 바뀜 */
+    .bg_on {
+        background-color: black;
+        transition-property: background-color;
+        transition-duration: 0.5s;
     }
     header a {
         color: #fff;
@@ -43,8 +49,7 @@ body {
     h1 img {
         width: 100%;
     }
-    .manu {
-        font-family: "Pretendard-Regular";
+    .menu {
         display: flex;
         justify-content: space-between;
         gap: 30px;
@@ -73,6 +78,7 @@ body {
         top: 0px;
         background-color: ghostwhite;
         transition: 0.5s;
+        transition-property: right;
     }
     .side_menu a {
         color: #222;
@@ -90,6 +96,38 @@ body {
         left: 10%;
         transform: translateY(-50%);
     }
+    /* 사이드메뉴 스플리팅 */
+    .side_txt a .char {
+        color: transparent;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+    .side_txt a .char::before,
+    .side_txt a .char::after {
+        content: attr(data-char);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        transition: transform 0.3s;
+        transition-delay: calc(30ms * var(--char-index));
+        color: #222;
+        opacity: 0.9;
+    }
+
+    .side_txt a .char::before {
+        /* color: red; */
+        transform: translateY(100%);
+        opacity: 1;
+    }
+    /* 마우스를 위치시키면*/
+    .side_txt a:hover .char::before {
+        transform: translateY(0px);
+    }
+    .side_txt a:hover .char::after {
+        transform: translateY(-100%);
+    }
+
     /* 햄버거바 */
     .wrap {
         width: 30px;
@@ -135,7 +173,7 @@ body {
         height: 500px;
         background-attachment: fixed;
         background-repeat: no-repeat;
-        background-position: 0px -250px;
+        background-position: -900px -250px;
         background-size: cover;
         position: relative;
     }
@@ -161,32 +199,51 @@ body {
         text-align: center;
         font-family: "Bebas Neue", serif;
     }
+
+    .brand_titl .char {
+        display: inline-block;
+        animation: slide-in 0.5s cubic-bezier(0.5, 0, 0.5, 1) both;
+        animation-delay: calc(60ms * var(--char-index));
+    }
+    @keyframes slide-in {
+        from {
+            transform: translateX(1.5em) scale(0.5);
+            opacity: 0;
+        }
+    }
+
     /* page01 */
     .page01 {
-        height: 2000px;
+        height: 1000px;
         box-sizing: border-box;
-        padding-top: 150px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        padding-top: 130px;
     }
     .p1_txt {
-        width: 70%;
-        height: 750px;
+        width: 75%;
+        height: 300px;
         position: relative;
+        margin: 0px auto;
     }
     .p1_txt > li {
         width: 100%;
         height: 100%;
         background-color: whitesmoke;
-        border-radius: 50px;
+        border-radius: 50px 50px 0px 0px;
         position: absolute;
         top: 0px;
         left: 0px;
         opacity: 0;
     }
-    .p1_txt > li:nth-child(3) {
+    .p1_txt > li:nth-child(1) {
         opacity: 1;
+    }
+    .p1_txt > li:nth-child(2) {
+        transform: translateY(120%);
+        background-color: rgba(235, 235, 235, 1);
+    }
+    .p1_txt > li:nth-child(3) {
+        transform: translateY(120%);
+        background-color: rgba(225, 225, 225, 1);
     }
     .p1_txt > li p {
         width: 80%;
@@ -201,11 +258,12 @@ body {
         transform: translate(-50%, -50%);
     }
     .p1_card {
-        width: 80%;
-        height: 750px;
-        border-radius: 50px;
+        width: 75%;
+        height: 450px;
+        border-radius: 0px 0px 50px 50px;
         overflow: hidden;
         position: relative;
+        margin: 0px auto;
     }
     .p1_card > li {
         width: 100%;
@@ -218,10 +276,13 @@ body {
     .p1_card > li:nth-child(1) {
         opacity: 1;
     }
+    .p1_card > li:nth-child(2),
+    .p1_card > li:nth-child(3) {
+        transform: translateY(120%);
+    }
     .p1_card > li img {
         width: 100%;
         height: 100%;
-        border-radius: 50px;
         object-fit: cover;
     }
     /* 중간 페이지 타이틀 */
@@ -391,16 +452,22 @@ body {
     /* header */
     header {
         width: 100vw;
+        background-color: black;
         display: flex;
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
         padding: 10px 20px;
-        background-color: black;
         position: fixed;
         top: 0px;
         left: 0px;
         z-index: 10;
+    }
+    /* 스크롤시 헤더색 바뀜 */
+    .bg_on {
+        background-color: black;
+        transition-property: background-color;
+        transition-duration: 0.5s;
     }
     header a {
         color: #fff;
@@ -414,8 +481,7 @@ body {
     .navi_wrap {
         margin-right: 80px;
     }
-    .manu {
-        font-family: "Pretendard-Regular";
+    .menu {
         display: flex;
         justify-content: space-between;
         gap: 30px;
@@ -423,6 +489,26 @@ body {
         box-sizing: border-box;
         font-size: 20px;
         font-weight: 500;
+    }
+    .menu > li {
+        position: relative;
+    }
+    .menu .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        top: -5px;
+        right: 90px;
+        color: #fff;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    /* 제이쿼리 */
+    .menu .circle_mov {
+        opacity: 1;
+        right: -15px;
     }
     .icon_wrap {
         display: flex;
@@ -432,6 +518,27 @@ body {
         box-sizing: border-box;
         font-size: 25px;
     }
+    .icon_wrap > li {
+        position: relative;
+    }
+    .icon_wrap .circle2 {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        top: -5px;
+        right: 30px;
+        color: #fff;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    /* 제이쿼리 */
+    .icon_wrap .icon_mov {
+        opacity: 1;
+        right: -10px;
+    }
+
     .ham_icon {
         width: 60px;
     }
@@ -443,6 +550,7 @@ body {
         top: 0px;
         background-color: ghostwhite;
         transition: 0.5s;
+        transition-property: right;
     }
     .side_menu a {
         color: #222;
@@ -460,6 +568,38 @@ body {
         left: 10%;
         transform: translateY(-50%);
     }
+    /* 사이드메뉴 스플리팅 */
+    .side_txt a .char {
+        color: transparent;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+    .side_txt a .char::before,
+    .side_txt a .char::after {
+        content: attr(data-char);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        transition: transform 0.3s;
+        transition-delay: calc(30ms * var(--char-index));
+        color: #222;
+        opacity: 0.9;
+    }
+
+    .side_txt a .char::before {
+        /* color: red; */
+        transform: translateY(100%);
+        opacity: 1;
+    }
+    /* 마우스를 위치시키면*/
+    .side_txt a:hover .char::before {
+        transform: translateY(0px);
+    }
+    .side_txt a:hover .char::after {
+        transform: translateY(-100%);
+    }
+
     /* 햄버거바 */
     .wrap {
         width: 30px;
@@ -505,7 +645,7 @@ body {
         height: 500px;
         background-attachment: fixed;
         background-repeat: no-repeat;
-        background-position: 0px -250px;
+        background-position: -100px -250px;
         background-size: cover;
         position: relative;
     }
@@ -531,11 +671,24 @@ body {
         font-size: 100px;
         font-family: "Bebas Neue", serif;
     }
+
+    .brand_titl .char {
+        display: inline-block;
+        animation: slide-in 0.5s cubic-bezier(0.5, 0, 0.5, 1) both;
+        animation-delay: calc(60ms * var(--char-index));
+    }
+    @keyframes slide-in {
+        from {
+            transform: translateX(1.5em) scale(0.5);
+            opacity: 0;
+        }
+    }
+
     /* page01 */
     .page01 {
         height: 1050px;
         box-sizing: border-box;
-        padding-top: 150px;
+        padding-top: 130px;
         display: flex;
         justify-content: center;
         gap: 50px;
@@ -556,8 +709,16 @@ body {
         left: 0px;
         opacity: 0;
     }
-    .p1_txt > li:nth-child(3) {
+    .p1_txt > li:nth-child(1) {
         opacity: 1;
+    }
+    .p1_txt > li:nth-child(2) {
+        transform: translateY(120%);
+        background-color: rgba(235, 235, 235, 1);
+    }
+    .p1_txt > li:nth-child(3) {
+        transform: translateY(120%);
+        background-color: rgba(225, 225, 225, 1);
     }
     .p1_txt > li p {
         width: 80%;
@@ -590,10 +751,13 @@ body {
     .p1_card > li:nth-child(1) {
         opacity: 1;
     }
+    .p1_card > li:nth-child(2),
+    .p1_card > li:nth-child(3) {
+        transform: translateY(120%);
+    }
     .p1_card > li img {
         width: 100%;
         height: 100%;
-        border-radius: 50px;
         object-fit: cover;
     }
     /* 중간 페이지 타이틀 */
@@ -755,16 +919,22 @@ body {
     /* header */
     header {
         width: 100vw;
+        background-color: black;
         display: flex;
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
         padding: 10px 20px;
-        background-color: black;
         position: fixed;
         top: 0px;
         left: 0px;
         z-index: 10;
+    }
+    /* 스크롤시 헤더색 바뀜 */
+    .bg_on {
+        background-color: black;
+        transition-property: background-color;
+        transition-duration: 0.5s;
     }
     header a {
         color: #fff;
@@ -778,8 +948,7 @@ body {
     .navi_wrap {
         margin-right: 90px;
     }
-    .manu {
-        font-family: "Pretendard-Regular";
+    .menu {
         display: flex;
         justify-content: space-between;
         gap: 50px;
@@ -788,6 +957,26 @@ body {
         font-size: 20px;
         font-weight: 500;
     }
+    .menu > li {
+        position: relative;
+    }
+    .menu .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        top: -5px;
+        right: 90px;
+        color: #fff;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    /* 제이쿼리 */
+    .menu .circle_mov {
+        opacity: 1;
+        right: -15px;
+    }
     .icon_wrap {
         display: flex;
         justify-content: space-between;
@@ -795,6 +984,26 @@ body {
         align-items: center;
         box-sizing: border-box;
         font-size: 25px;
+    }
+    .icon_wrap > li {
+        position: relative;
+    }
+    .icon_wrap .circle2 {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        position: absolute;
+        top: -5px;
+        right: 30px;
+        color: #fff;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    /* 제이쿼리 */
+    .icon_wrap .icon_mov {
+        opacity: 1;
+        right: -10px;
     }
     .ham_icon {
         width: 60px;
@@ -806,7 +1015,7 @@ body {
         right: -500px;
         top: 0px;
         background-color: ghostwhite;
-        opacity: 0;
+        transition-property: right;
         transition: 0.5s;
     }
     .side_menu a {
@@ -816,7 +1025,6 @@ body {
     /* 사이드메뉴 들어옴 */
     .side_on {
         right: 0px;
-        opacity: 1;
     }
     .side_txt {
         font-family: "Bebas Neue", sans-serif;
@@ -826,6 +1034,38 @@ body {
         left: 10%;
         transform: translateY(-50%);
     }
+    /* 사이드메뉴 스플리팅 */
+    .side_txt a .char {
+        color: transparent;
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+    .side_txt a .char::before,
+    .side_txt a .char::after {
+        content: attr(data-char);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        transition: transform 0.3s;
+        transition-delay: calc(30ms * var(--char-index));
+        color: #222;
+        opacity: 0.9;
+    }
+
+    .side_txt a .char::before {
+        /* color: red; */
+        transform: translateY(100%);
+        opacity: 1;
+    }
+    /* 마우스를 위치시키면*/
+    .side_txt a:hover .char::before {
+        transform: translateY(0px);
+    }
+    .side_txt a:hover .char::after {
+        transform: translateY(-100%);
+    }
+
     /* 햄버거바 */
     .wrap {
         width: 30px;
@@ -895,11 +1135,24 @@ body {
         font-size: 150px;
         font-family: "Bebas Neue", serif;
     }
+
+    .brand_titl .char {
+        display: inline-block;
+        animation: slide-in 0.5s cubic-bezier(0.5, 0, 0.5, 1) both;
+        animation-delay: calc(60ms * var(--char-index));
+    }
+    @keyframes slide-in {
+        from {
+            transform: translateX(1.5em) scale(0.5);
+            opacity: 0;
+        }
+    }
+
     /* page01 */
     .page01 {
         height: 1050px;
         box-sizing: border-box;
-        padding-top: 150px;
+        padding-top: 130px;
         display: flex;
         justify-content: center;
         gap: 50px;
@@ -921,6 +1174,14 @@ body {
     }
     .p1_txt > li:nth-child(1) {
         opacity: 1;
+    }
+    .p1_txt > li:nth-child(2) {
+        transform: translateY(120%);
+        background-color: rgba(235, 235, 235, 1);
+    }
+    .p1_txt > li:nth-child(3) {
+        transform: translateY(120%);
+        background-color: rgba(225, 225, 225, 1);
     }
     .p1_txt > li p {
         width: 80%;
@@ -952,10 +1213,13 @@ body {
     .p1_card > li:nth-child(1) {
         opacity: 1;
     }
+    .p1_card > li:nth-child(2),
+    .p1_card > li:nth-child(3) {
+        transform: translateY(120%);
+    }
     .p1_card > li img {
         width: 100%;
         height: 100%;
-        border-radius: 50px;
         object-fit: cover;
     }
     /* 중간 페이지 타이틀 */
