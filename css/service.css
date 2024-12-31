@@ -14,7 +14,7 @@ body {
     position: relative;
     overflow-x: hidden;
     word-break: keep-all;
-    font-family: "NanumSquare";
+    font-family: "Pretendard-Regular";
 }
 /* ==================================================================== */
 
@@ -23,7 +23,6 @@ body {
     /* header */
     header {
         width: 100vw;
-        font-family: "Pretendard-Regular";
         background-color: black;
         display: flex;
         justify-content: space-between;
@@ -79,6 +78,7 @@ body {
         top: 0px;
         background-color: ghostwhite;
         transition: 0.5s;
+        transition-property: right;
     }
     .side_menu a {
         color: #222;
@@ -92,7 +92,7 @@ body {
         font-family: "Bebas Neue", sans-serif;
         font-size: 60px;
         position: absolute;
-        top: 40%;
+        top: 35%;
         left: 10%;
         transform: translateY(-50%);
     }
@@ -135,7 +135,7 @@ body {
         overflow: hidden;
         cursor: pointer;
         position: absolute;
-        right: 50px;
+        right: 30px;
         top: 20px;
         z-index: 10;
     }
@@ -162,6 +162,7 @@ body {
     /* container */
     #container {
         width: 100vw;
+        font-family: "NanumSquare";
     }
     section {
         width: 100vw;
@@ -199,6 +200,17 @@ body {
         text-align: center;
         font-family: "Bebas Neue", serif;
     }
+    .big_titl .char {
+        display: inline-block;
+        animation: slide-in 0.5s cubic-bezier(0.5, 0, 0.5, 1) both;
+        animation-delay: calc(60ms * var(--char-index));
+    }
+    @keyframes slide-in {
+        from {
+            transform: translateX(1.5em) scale(0.5);
+            opacity: 0;
+        }
+    }
     /* page01 */
     .page01 {
         height: 1400px;
@@ -213,10 +225,14 @@ body {
         width: 100%;
         font-family: "Bebas Neue", serif;
         font-size: 60px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .pg_titl > p {
         width: 100%;
         font-size: 15px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .p1_txt {
         width: 400px;
@@ -230,7 +246,8 @@ body {
         height: 550px;
     }
     .p1_txt > li:nth-child(1) {
-        border-radius: 50px;
+        transform: translateX(-50%);
+        opacity: 0;
     }
     .p1_txt > li:nth-child(2) {
         position: relative;
@@ -254,9 +271,13 @@ body {
         margin-bottom: 20px;
         font-size: 20px;
         font-weight: 900;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .txt_box > a {
         margin-top: 50px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     /* 가입하기 버튼 */
     .more {
@@ -281,11 +302,17 @@ body {
         left: 0px;
         z-index: 1;
         color: #222;
+        transition-property: color;
+        transition: 0.3s;
     }
     .fullColor {
         width: 0%;
         height: 100%;
-        background-color: #222;
+        background-color: black;
+    }
+    /* 호버시 폰트색상 하얗게 */
+    .on_wh {
+        color: #fff;
     }
     /* page02 */
     .page02 {
@@ -301,6 +328,8 @@ body {
         font-size: 40px;
         font-weight: 900;
         margin-bottom: 30px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .sub_titl > p {
         width: 50%;
@@ -308,6 +337,8 @@ body {
         font-size: 15px;
         margin: 0px auto;
         margin-bottom: 10px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .care_service {
         width: 75%;
@@ -325,6 +356,7 @@ body {
         background-position: center;
         background-size: cover;
         position: relative;
+        transform: scale(0);
     }
     .care_service > li:nth-child(1) {
         border-radius: 50px 50px 50px 50px;
@@ -376,7 +408,7 @@ body {
     }
     /* page03 */
     .page03 {
-        height: 1500px;
+        height: 1300px;
         box-sizing: border-box;
         padding-top: 0px;
     }
@@ -405,6 +437,11 @@ body {
         left: 50%;
         transform: translateX(-50%);
     }
+    .p3_txt li {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
     .p3_txt li:nth-child(1),
     .p3_txt li:nth-child(2) {
         font-size: 30px;
@@ -432,14 +469,17 @@ body {
         text-align: center;
         padding: 30px;
         position: absolute;
-        top: 50%;
+        top: 100%;
         left: 50%;
-        transform: translate(-50%, -25%);
+        transform: translate(-50%, -45%);
         border-radius: 50px;
+        opacity: 0;
     }
     .process li {
         width: calc(100% / 5);
         height: 190px;
+        transform: translateX(-150%);
+        opacity: 0;
     }
     .process img {
         width: 50px;
@@ -466,7 +506,7 @@ body {
         padding-top: 0px;
     }
     .p4_wrap {
-        height: 1300px;
+        height: 1400px;
         background-image: url(../img/service_pg4.jpg);
         background-repeat: no-repeat;
         background-position: top;
@@ -488,7 +528,7 @@ body {
         align-items: center;
         position: absolute;
         color: #fff;
-        bottom: 300px;
+        bottom: 50%;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -497,9 +537,13 @@ body {
     }
     .p4_txt p {
         margin-bottom: 10px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .p4_txt a {
         border-color: #fff;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .p4_txt a div {
         color: #fff;
@@ -568,7 +612,6 @@ body {
     /* header */
     header {
         width: 100vw;
-        font-family: "Pretendard-Regular";
         background-color: black;
         display: flex;
         justify-content: space-between;
@@ -667,6 +710,7 @@ body {
         top: 0px;
         background-color: ghostwhite;
         transition: 0.5s;
+        transition-property: right;
     }
     .side_menu a {
         color: #222;
@@ -750,6 +794,7 @@ body {
     /* container */
     #container {
         width: 100vw;
+        font-family: "NanumSquare";
     }
     section {
         width: 100vw;
@@ -787,9 +832,20 @@ body {
         font-size: 100px;
         font-family: "Bebas Neue", serif;
     }
+    .big_titl .char {
+        display: inline-block;
+        animation: slide-in 0.5s cubic-bezier(0.5, 0, 0.5, 1) both;
+        animation-delay: calc(60ms * var(--char-index));
+    }
+    @keyframes slide-in {
+        from {
+            transform: translateX(1.5em) scale(0.5);
+            opacity: 0;
+        }
+    }
     /* page01 */
     .page01 {
-        height: 1400px;
+        height: 1100px;
         box-sizing: border-box;
         padding-top: 100px;
     }
@@ -801,36 +857,45 @@ body {
         width: 100%;
         font-family: "Bebas Neue", serif;
         font-size: 100px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .pg_titl > p {
         width: 100%;
         font-size: 25px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .p1_txt {
-        width: 500px;
+        width: 80%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         margin: 0px auto;
     }
     .p1_txt > li {
-        width: 100%;
+        width: calc(100% / 2);
         height: 550px;
     }
     .p1_txt > li:nth-child(1) {
-        border-radius: 50px;
+        transform: translateX(-50%);
+        opacity: 0;
+        position: relative;
     }
     .p1_txt > li:nth-child(2) {
         position: relative;
     }
     .p1_txt img {
         width: 100%;
-        height: 100%;
         object-fit: cover;
         border-radius: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
     .txt_box {
-        width: 293px;
+        width: 235px;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -840,11 +905,15 @@ body {
     .txt_box > p {
         text-align: left;
         margin-bottom: 20px;
-        font-size: 25px;
+        font-size: 20px;
         font-weight: 900;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .txt_box > a {
         margin-top: 50px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     /* 가입하기 버튼 */
     .more {
@@ -869,11 +938,17 @@ body {
         left: 0px;
         z-index: 1;
         color: #222;
+        transition-property: color;
+        transition: 0.3s;
     }
     .fullColor {
         width: 0%;
         height: 100%;
-        background-color: #222;
+        background-color: black;
+    }
+    /* 호버시 폰트색상 하얗게 */
+    .on_wh {
+        color: #fff;
     }
     /* page02 */
     .page02 {
@@ -889,11 +964,15 @@ body {
         font-size: 50px;
         font-weight: 900;
         margin-bottom: 30px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .sub_titl > p {
         width: 100%;
         font-size: 16px;
         margin-bottom: 10px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .care_service {
         width: 90%;
@@ -911,6 +990,7 @@ body {
         background-position: center;
         background-size: cover;
         position: relative;
+        transform: scale(0);
     }
     .care_service > li:nth-child(1) {
         border-radius: 50px 50px 0px 50px;
@@ -961,9 +1041,8 @@ body {
     }
     /* page03 */
     .page03 {
-        height: 1500px;
+        height: 1300px;
         box-sizing: border-box;
-        padding-top: 0px;
     }
     .process {
         font-family: "Pretendard-Regular";
@@ -986,10 +1065,15 @@ body {
         color: #fff;
         text-align: center;
         position: absolute;
-        top: 70px;
+        top: 50px;
         left: 50%;
         transform: translateX(-50%);
     }
+    .p3_txt li {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
     .p3_txt li:nth-child(1),
     .p3_txt li:nth-child(2) {
         font-size: 30px;
@@ -1017,14 +1101,17 @@ body {
         text-align: center;
         padding: 40px;
         position: absolute;
-        top: 50%;
+        top: 100%;
         left: 50%;
-        transform: translate(-50%, -25%);
+        transform: translate(-50%, -60%);
         border-radius: 50px;
+        opacity: 0;
     }
     .process li {
         width: calc(100% / 7);
         height: 190px;
+        transform: translateX(-150%);
+        opacity: 0;
     }
     .process img {
         width: 100px;
@@ -1048,7 +1135,7 @@ body {
         padding-top: 0px;
     }
     .p4_wrap {
-        height: 1250px;
+        height: 1400px;
         background-image: url(../img/service_pg4.jpg);
         background-repeat: no-repeat;
         background-position: top;
@@ -1069,7 +1156,7 @@ body {
         align-items: center;
         position: absolute;
         color: #fff;
-        bottom: 300px;
+        bottom: 450px;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1078,9 +1165,13 @@ body {
     }
     .p4_txt p {
         margin-bottom: 10px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .p4_txt a {
         border-color: #fff;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .p4_txt a div {
         color: #fff;
@@ -1148,7 +1239,6 @@ body {
     /* header */
     header {
         width: 100vw;
-        font-family: "Pretendard-Regular";
         background-color: black;
         display: flex;
         justify-content: space-between;
@@ -1181,6 +1271,7 @@ body {
     .menu {
         display: flex;
         justify-content: space-between;
+        font-family: "Pretendard-Regular";
         gap: 50px;
         align-items: center;
         box-sizing: border-box;
@@ -1245,6 +1336,8 @@ body {
         right: -500px;
         top: 0px;
         background-color: ghostwhite;
+        transition-property: right;
+        transition: 0.5s;
     }
     .side_menu a {
         color: #222;
@@ -1253,7 +1346,6 @@ body {
     /* 사이드메뉴 들어옴 */
     .side_on {
         right: 0px;
-        opacity: 1;
     }
     .side_txt {
         font-family: "Bebas Neue", sans-serif;
@@ -1329,6 +1421,7 @@ body {
     /* container */
     #container {
         width: 100vw;
+        font-family: "NanumSquare";
     }
     section {
         width: 100vw;
@@ -1364,6 +1457,18 @@ body {
         font-size: 150px;
         font-family: "Bebas Neue", serif;
     }
+    .big_titl .char {
+        display: inline-block;
+        animation: slide-in 0.5s cubic-bezier(0.5, 0, 0.5, 1) both;
+        animation-delay: calc(60ms * var(--char-index));
+    }
+    @keyframes slide-in {
+        from {
+            transform: translateX(1.5em) scale(0.5);
+            opacity: 0;
+        }
+    }
+
     /* page01 */
     .page01 {
         height: 1000px;
@@ -1378,13 +1483,17 @@ body {
         width: 100%;
         font-family: "Bebas Neue", serif;
         font-size: 110px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .pg_titl > p {
         width: 100%;
         font-size: 30px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .p1_txt {
-        width: 1200px;
+        width: 1000px;
         display: flex;
         justify-content: center;
         margin: 0px auto;
@@ -1394,12 +1503,15 @@ body {
         height: 550px;
     }
     .p1_txt > li:nth-child(1) {
-        border-radius: 50px;
+        transform: translateX(-50%);
+        opacity: 0;
     }
     .p1_txt > li:nth-child(2) {
         position: relative;
     }
     .p1_txt img {
+        width: 500px;
+        object-fit: cover;
         border-radius: 50px;
     }
     .txt_box {
@@ -1415,9 +1527,13 @@ body {
         margin-bottom: 20px;
         font-size: 25px;
         font-weight: 900;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .txt_box > a {
         margin-top: 50px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     /* 가입하기 버튼 */
     .more {
@@ -1425,7 +1541,7 @@ body {
         height: 50px;
         line-height: 50px;
         text-align: center;
-        border: 1px solid #222;
+        border: 1px solid black;
         border-radius: 30px;
         font-family: "Pretendard-Regular";
         font-size: 18px;
@@ -1442,11 +1558,17 @@ body {
         left: 0px;
         z-index: 1;
         color: #222;
+        transition-property: color;
+        transition: 0.3s;
     }
     .fullColor {
         width: 0%;
         height: 100%;
-        background-color: #222;
+        background-color: black;
+    }
+    /* 호버시 폰트색상 하얗게 */
+    .on_wh {
+        color: #fff;
     }
     /* page02 */
     .page02 {
@@ -1462,11 +1584,15 @@ body {
         font-size: 60px;
         font-weight: 900;
         margin-bottom: 30px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .sub_titl > p {
         width: 100%;
         font-size: 20px;
         margin-bottom: 10px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .care_service {
         width: 1200px;
@@ -1484,6 +1610,7 @@ body {
         background-position: center;
         background-size: cover;
         position: relative;
+        transform: scale(0);
     }
     .care_service > li:nth-child(1) {
         border-radius: 50px 50px 0px 50px;
@@ -1542,7 +1669,7 @@ body {
         font-family: "Pretendard-Regular";
     }
     .p3_bg {
-        height: 960px;
+        height: 1200px;
         background-image: url(../img/service_pg3.jpg);
         background-repeat: no-repeat;
         background-position: top;
@@ -1558,9 +1685,13 @@ body {
         color: #fff;
         text-align: center;
         position: absolute;
-        top: 70px;
+        top: 200px;
         left: 50%;
         transform: translateX(-50%);
+    }
+    .p3_txt li {
+        transform: translateY(100px);
+        opacity: 0;
     }
     .p3_txt li:nth-child(1),
     .p3_txt li:nth-child(2) {
@@ -1589,10 +1720,11 @@ body {
         text-align: center;
         padding: 40px;
         position: absolute;
-        top: 50%;
+        top: 100%;
         left: 50%;
-        transform: translate(-50%, -40%);
+        transform: translate(-50%, -30%);
         border-radius: 50px;
+        opacity: 0;
     }
     .process h3 {
         margin-top: 20px;
@@ -1605,14 +1737,22 @@ body {
         margin-top: 50px;
         font-size: 30px;
     }
+    .process li {
+        transform: translateX(-150%);
+        opacity: 0;
+    }
+    .car_titl {
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
     /* page04 */
     .page04 {
         height: 1400px;
         box-sizing: border-box;
-        padding-top: 0px;
+        padding-top: 100px;
     }
     .p4_wrap {
-        height: 1250px;
+        height: 1300px;
         background-image: url(../img/service_pg4.jpg);
         background-repeat: no-repeat;
         background-position: top;
@@ -1632,7 +1772,7 @@ body {
         gap: 200px;
         position: absolute;
         color: #fff;
-        bottom: 300px;
+        bottom: 450px;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -1641,9 +1781,13 @@ body {
     }
     .p4_txt p {
         margin-bottom: 10px;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .p4_txt a {
         border-color: #fff;
+        transform: translateY(200px);
+        opacity: 0;
     }
     .p4_txt a div {
         color: #fff;

@@ -17,7 +17,7 @@ body {
     position: relative;
     overflow-x: hidden;
     word-break: keep-all;
-    font-family: "NanumSquare";
+    font-family: "Pretendard-Regular";
 }
 /* ==================================================================== */
 
@@ -95,7 +95,7 @@ body {
         font-family: "Bebas Neue", sans-serif;
         font-size: 60px;
         position: absolute;
-        top: 40%;
+        top: 35%;
         left: 10%;
         transform: translateY(-50%);
     }
@@ -138,7 +138,7 @@ body {
         overflow: hidden;
         cursor: pointer;
         position: absolute;
-        right: 50px;
+        right: 30px;
         top: 20px;
         z-index: 10;
     }
@@ -165,6 +165,7 @@ body {
     /* container */
     #container {
         width: 100vw;
+        font-family: "NanumSquare";
     }
     section {
         width: 100vw;
@@ -608,6 +609,7 @@ body {
     /* container */
     #container {
         width: 100vw;
+        font-family: "NanumSquare";
     }
     section {
         width: 100vw;
@@ -1058,6 +1060,7 @@ body {
     /* container */
     #container {
         width: 100vw;
+        font-family: "NanumSquare";
     }
     section {
         width: 100vw;

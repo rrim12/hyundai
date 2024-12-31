@@ -22,4 +22,19 @@ $(function () {
     $(".icon_wrap > li").on("mouseleave", function () {
         $(this).children(".circle2").removeClass("icon_mov");
     });
+
+    // more 버튼
+    $(".more").on("mouseenter", function () {
+        $(this).children(".fullColor").stop().animate({ width: "100%" }, 200);
+        $(this).children(".more_txt").addClass("on_wh");
+    });
+    $(".more").on("mouseleave", function () {
+        $(this).children(".fullColor").stop().animate({ width: "0%" }, 200);
+        $(this).children(".more_txt").removeClass("on_wh");
+    });
+
+    //스크롤탑 이동버튼
+    $(".top_Butt").on("click", function () {
+        $("html, body").stop().animate({ scrollTop: "0" });
+    });
 });

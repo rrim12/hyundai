@@ -91,7 +91,7 @@ body {
         font-family: "Bebas Neue", sans-serif;
         font-size: 60px;
         position: absolute;
-        top: 40%;
+        top: 35%;
         left: 10%;
         transform: translateY(-50%);
     }
@@ -134,7 +134,7 @@ body {
         overflow: hidden;
         cursor: pointer;
         position: absolute;
-        right: 50px;
+        right: 30px;
         top: 20px;
         z-index: 10;
     }
@@ -177,7 +177,6 @@ body {
         display: block;
     }
     .sonata {
-        margin-left: -1000px;
         opacity: 1;
         transition: 1s;
     }
@@ -186,7 +185,6 @@ body {
         top: 0px;
         left: 0px;
         opacity: 0;
-        margin-left: -1000px;
         transition: 1s;
     }
     .b_bg {
