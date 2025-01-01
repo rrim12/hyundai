@@ -297,12 +297,12 @@ body {
         opacity: 0;
     }
     .p2_photo {
-        width: 1100%;
+        width: 1200%;
         display: flex;
         gap: 10px;
         position: absolute;
         top: 50%;
-        left: 25%;
+        left: 20%;
         transform: translateY(-50%);
     }
     .p2_photo > li {
@@ -408,7 +408,7 @@ body {
         background-color: #fff;
         position: absolute;
         cursor: pointer;
-        top: 30px;
+        top: 100px;
         right: 50px;
     }
     .top_Butt img {
